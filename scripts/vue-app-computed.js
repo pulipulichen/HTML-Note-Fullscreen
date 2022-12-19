@@ -1,12 +1,16 @@
 var appComputed = {
   colorSchema () {
+    if (!this.color) {
+      return this.colors.sticky
+    }
+
     let schema = this.colors[this.color.toLowerCase()]
     // console.log(this.color, schema)
     if (schema) {
       return schema
     }
     else {
-      return this.colors.white
+      return this.colors.sticky
     }
   },
   computedBackgroundPattern () {
