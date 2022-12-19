@@ -8,6 +8,10 @@ var appMount = async function () {
   await this.sleep(100)
   this.autoResize()
 
+  window.addEventListener('focus', () => {
+    this.$refs.textarea.focus()
+  })
+
   // setTimeout(() => {
   //   // this.testFormatAuthor202210240012English()
   //   // this.testFormatAuthor202210240012Chinese()

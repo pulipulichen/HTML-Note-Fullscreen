@@ -35,6 +35,8 @@ String.prototype.hashCode = function() {
     hash = ((hash << 5) - hash) + chr;
     hash |= 0; // Convert to 32bit integer
   }
+
+  hash = Math.abs(hash)
   return hash;
 }
 
@@ -52,57 +54,57 @@ let colors = {
   'red': {
     font: '#db2828',
     background: '#ffe8e6',
-    border: '#db2828'
+    border: 'rgba(219, 40, 40, .5)'
   },
   'orange': {
     font: '#f2711c',
     background: '#ffedde',
-    border: '#f2711c'
+    border: 'rgba(242, 113, 28, .5)'
   },
   'yellow': {
     font: '#b58105',
     background: '#fff8db',
-    border: '#b58105'
+    border: 'rgba(181, 129, 5, .5)'
   },
   'olive': {
     font: '#8abc1e',
     background: '#fbfdef',
-    border: '#8abc1e'
+    border: 'rgba(138, 188, 30, .5)'
   },
   'teal': {
     font: '#10a3a3',
     background: '#e1f7f7',
-    border: '#10a3a3'
+    border: 'rgba(16, 163, 163, .5)'
   },
   'blue': {
     font: '#2185d0',
     background: '#dff0ff',
-    border: '#2185d0'
+    border: 'rgba(33, 133, 208, .5)'
   },
   'violet': {
     font: '#6435c9',
     background: '#eae7ff',
-    border: '#6435c9'
+    border: 'rgba(100, 53, 201, .5)'
   },
   'purple': {
     font: '#a333c8',
     background: '#f6e7ff',
-    border: '#a333c8'
+    border: 'rgba(163, 51, 200, .5)'
   },
   'pink': {
     font: '#e03997',
     background: '#ffe3fb',
-    border: '#e03997'
+    border: 'rgba(224, 57, 151, .5)'
   },
   'brown': {
     font: '#a5673f',
     background: '#f1e2d3',
-    border: '#a5673f'
+    border: 'rgba(165, 103, 63, .5)'
   },
   'black': {
     font: 'rgba(255,255,255,.9)',
     background: '#1b1c1d',
-    border: '#1b1c1d'
+    border: 'rgba(27, 28, 29, .5)'
   }
 }
 
