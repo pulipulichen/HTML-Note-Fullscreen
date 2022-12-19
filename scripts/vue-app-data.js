@@ -110,6 +110,9 @@ let color = urlParams.get('color')
 if (!color) {
   if (id) {
     let idCode = id.hashCode()
+    if (idCode < 0) {
+      idCode = idCode * -1
+    }
     let colorNames = Object.keys(colors)
     let colorIndex = idCode % colorNames.length
     color = colorNames[colorIndex]
