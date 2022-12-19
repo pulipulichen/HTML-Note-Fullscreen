@@ -6,6 +6,14 @@ let id = urlParams.get('id')
 if (id) {
   cacheKey = cacheKey + `_` + id
 }
+else if (window.location != window.parent.location) {
+  let url = (window.location != window.parent.location)
+            ? document.referrer
+            : document.location.href;
+  if (url) {
+    cacheKey = cacheKey + '_' + url
+  }
+}
 
 var appData = {
   db: {
