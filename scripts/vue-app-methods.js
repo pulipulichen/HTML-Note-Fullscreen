@@ -53,7 +53,20 @@ var appMethods = {
       // console.log()
       // await this.sleep(1000)
       window.scrollTo(0, y)
+
+      this.setDocumentTitle()
     }, 300)
+  },
+  setDocumentTitle () {
+    let title = this.localConfig.input.trim()
+
+    if (title.length === 0) {
+      return false
+    }
+
+    title = title.replace(/\n/g, ' ')
+
+    document.title = title
   },
   ...appMethodsTest
 }
