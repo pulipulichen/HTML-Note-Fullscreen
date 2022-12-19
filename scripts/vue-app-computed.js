@@ -1,7 +1,7 @@
 var appComputed = {
   colorSchema () {
     let schema = this.colors[this.color.toLowerCase()]
-    console.log(this.color, schema)
+    // console.log(this.color, schema)
     if (schema) {
       return schema
     }
