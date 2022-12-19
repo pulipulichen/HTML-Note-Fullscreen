@@ -118,7 +118,7 @@ if (!color) {
     color = 'sticky'
   }
 }
-// console.log(color)
+console.log(color, id, id.hashCode())
 // console.log(line)
 var appData = {
   db: {
