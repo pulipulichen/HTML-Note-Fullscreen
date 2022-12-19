@@ -66,3 +66,11 @@ let colors = {
     border: 'rgba(27, 28, 29, .5)'
   }
 }
+
+/*
+a = Object.keys(colors).map(name => {
+  let {font, background, border} = colors[name]
+  return [name, font, background, border].join('\t')
+}).join('\n')
+console.log(a)
+*/
