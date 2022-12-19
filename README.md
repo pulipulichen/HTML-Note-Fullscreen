@@ -14,15 +14,15 @@ https://pulipulichen.github.io/HTML-Note-Fullscreen/?id=example
 配色組合
 
 https://semantic-ui.com/collections/message.html#colored
-Red
-Orange
-Yellow
-Olive
-Green
-Teal
-Blue
-Violet
-Purple
-Pink
-Brown
-Black
+red
+orange
+yellow
+olive
+green
+teal
+blue
+violet
+purple
+pink
+brown
+black
