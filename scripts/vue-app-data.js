@@ -21,16 +21,96 @@ if (!fontSize) {
   fontSize = '10rem'
 }
 
+let line = urlParams.get('line')
+if (!line) {
+  line = 'true'
+}
+
+let color = urlParams.get('color')
+if (!color) {
+  color = 'sticky'
+}
+// console.log(color)
+// console.log(line)
 var appData = {
   db: {
     config: CONFIG,
     localConfig: LOCAL_CONFIG,
-    output: [],
-    fontSize
+    output: []
   },
-
+  fontSize,
+  line,
+  autoResizeTimer: null,
   cacheKey,
-  inited: false
+  inited: false,
+  color,
+  colors: {
+    'sticky': {
+      font: '#000',
+      background: '#feff9c',
+      border: 'rgba(0,0,0,0.5)'
+    },
+    'white': {
+      font: '#000',
+      background: '#fff',
+      border: 'rgba(0,0,0,0.5)'
+    },
+    'red': {
+      font: '#db2828',
+      background: '#ffe8e6',
+      border: '#db2828'
+    },
+    'orange': {
+      font: '#f2711c',
+      background: '#ffedde',
+      border: '#f2711c'
+    },
+    'yellow': {
+      font: '#b58105',
+      background: '#fff8db',
+      border: '#b58105'
+    },
+    'olive': {
+      font: '#8abc1e',
+      background: '#fbfdef',
+      border: '#8abc1e'
+    },
+    'teal': {
+      font: '#10a3a3',
+      background: '#e1f7f7',
+      border: '#10a3a3'
+    },
+    'blue': {
+      font: '#2185d0',
+      background: '#dff0ff',
+      border: '#2185d0'
+    },
+    'violet': {
+      font: '#6435c9',
+      background: '#eae7ff',
+      border: '#6435c9'
+    },
+    'purple': {
+      font: '#a333c8',
+      background: '#f6e7ff',
+      border: '#a333c8'
+    },
+    'pink': {
+      font: '#e03997',
+      background: '#ffe3fb',
+      border: '#e03997'
+    },
+    'brown': {
+      font: '#a5673f',
+      background: '#f1e2d3',
+      border: '#a5673f'
+    },
+    'black': {
+      font: 'rgba(255,255,255,.9)',
+      background: '#1b1c1d',
+      border: '#1b1c1d'
+    }
+  }
 }
 
 // console.log(LOCAL_CONFIG)

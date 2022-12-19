@@ -5,6 +5,9 @@ var appMount = async function () {
   this.loadLocalConfig()
   this.inited = true
 
+  await this.sleep(100)
+  this.autoResize()
+
   // setTimeout(() => {
   //   // this.testFormatAuthor202210240012English()
   //   // this.testFormatAuthor202210240012Chinese()

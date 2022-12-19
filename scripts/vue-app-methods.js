@@ -30,5 +30,30 @@ var appMethods = {
       this.db.localConfig[key] = projectFileListData[key]
     }
   },
+  sleep: function (ms = 500) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  },
+  autoResize: async function (event) {
+    let element = this.$refs.textarea
+    
+    // console.log(element)
+    if (event && event.target) {
+      element = event.target
+    }
+    if (element.scrollHeight === 0) {
+      return false
+    }
+
+    clearTimeout(this.autoResizeTimer)
+
+    this.autoResizeTimer = setTimeout(async () => {
+      let y = window.scrollY
+      element.style.height = 'auto';
+      element.style.height = element.scrollHeight + 'px';
+      // console.log()
+      // await this.sleep(1000)
+      window.scrollTo(0, y)
+    }, 300)
+  },
   ...appMethodsTest
 }
