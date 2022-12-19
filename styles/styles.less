@@ -1,5 +1,6 @@
 body {
-  padding: 2rem;
+  padding: 0rem !important;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 767px) {
@@ -8,7 +9,27 @@ body {
   }
 }
 
+/*
+textarea {
+  // width: 100vw;
+  // height: 100vh;
+  width: fit-content;
+  height: fit-content;
+}
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC');
+
+h1,
 textarea {
   width: 100vw;
   height: 100vh;
+  // text-align: center;
+  font-family: 'Bowlby One SC', cursive;
+  // font-size: 15.5vw;
+  font-size: 10rem;
+
+  &:focus {
+    outline: none;
+  }
 }

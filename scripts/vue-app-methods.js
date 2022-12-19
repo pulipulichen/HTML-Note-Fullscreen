@@ -29,5 +29,60 @@ var appMethods = {
       this.db.localConfig[key] = projectFileListData[key]
     }
   },
+  getLocalConfigItem: function (key) {
+    if (typeof(key) !== 'string' || key === '') {
+      return undefined
+    }
+
+    return this.localConfig.sites.filter((i) => {
+      return (i.siteID === this.siteID && i.key === key)
+    })
+  },
+  getLocalConfig: function (key, defaultValue) {
+    if (typeof(key) !== 'string' || key === '') {
+      return undefined
+    }
+
+    let items = this.getLocalConfigItem(key)
+
+    if (items.length === 0) {
+
+      if (defaultValue !== undefined) {
+        this.localConfig.sites.push({
+          siteID: this.siteID,
+          key,
+          value: defaultValue
+        })
+      }
+        
+      return defaultValue
+    }
+    else {
+      return items[0].value
+    }
+  },
+  setLocalConfig: function (key, value) {
+    if (typeof(key) !== 'string' || key === '') {
+      return undefined
+    }
+
+    let items = this.getLocalConfigItem(key)
+
+    if (items.length === 0) {
+
+      if (defaultValue !== undefined) {
+        this.localConfig.sites.push({
+          siteID: this.siteID,
+          key,
+          value: defaultValue
+        })
+      }
+        
+      return defaultValue
+    }
+    else if (items[0].value !== value) {
+      this.localConfig.sites.$set()
+    }
+  },
   ...appMethodsTest
 }
