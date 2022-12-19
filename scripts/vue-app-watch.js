@@ -1,5 +1,4 @@
-var appWatch = {
-  
+var appWatch = {  
 }
 
 // console.log(LOCAL_CONFIG)

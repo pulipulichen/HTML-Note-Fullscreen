@@ -12,6 +12,7 @@ var appMethods = {
     // console.log(data)
   },
   loadLocalConfig: function () {
+    
     let projectFileListData = localStorage.getItem(this.cacheKey)
     if (!projectFileListData) {
       return false
@@ -27,61 +28,6 @@ var appMethods = {
       
     for (let key in projectFileListData) {
       this.db.localConfig[key] = projectFileListData[key]
-    }
-  },
-  getLocalConfigItem: function (key) {
-    if (typeof(key) !== 'string' || key === '') {
-      return undefined
-    }
-
-    return this.localConfig.sites.filter((i) => {
-      return (i.siteID === this.siteID && i.key === key)
-    })
-  },
-  getLocalConfig: function (key, defaultValue) {
-    if (typeof(key) !== 'string' || key === '') {
-      return undefined
-    }
-
-    let items = this.getLocalConfigItem(key)
-
-    if (items.length === 0) {
-
-      if (defaultValue !== undefined) {
-        this.localConfig.sites.push({
-          siteID: this.siteID,
-          key,
-          value: defaultValue
-        })
-      }
-        
-      return defaultValue
-    }
-    else {
-      return items[0].value
-    }
-  },
-  setLocalConfig: function (key, value) {
-    if (typeof(key) !== 'string' || key === '') {
-      return undefined
-    }
-
-    let items = this.getLocalConfigItem(key)
-
-    if (items.length === 0) {
-
-      if (defaultValue !== undefined) {
-        this.localConfig.sites.push({
-          siteID: this.siteID,
-          key,
-          value: defaultValue
-        })
-      }
-        
-      return defaultValue
-    }
-    else if (items[0].value !== value) {
-      this.localConfig.sites.$set()
     }
   },
   ...appMethodsTest
