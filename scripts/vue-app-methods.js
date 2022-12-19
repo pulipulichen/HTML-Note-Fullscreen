@@ -61,6 +61,7 @@ var appMethods = {
     let title = this.db.localConfig.input.trim()
 
     if (title.length === 0) {
+      document.title = 'Note Fullscreen'
       return false
     }
 
