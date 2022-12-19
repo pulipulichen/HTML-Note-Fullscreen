@@ -58,7 +58,7 @@ var appMethods = {
     }, 300)
   },
   setDocumentTitle () {
-    let title = this.localConfig.input.trim()
+    let title = this.db.localConfig.input.trim()
 
     if (title.length === 0) {
       return false
